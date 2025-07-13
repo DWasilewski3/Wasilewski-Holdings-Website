@@ -1,27 +1,4 @@
-export interface Project {
-  id: string;
-  title: string;
-  description: string;
-  imageUrl: string;
-  link?: string;
-  status: string;
-  timeline: string;
-  category: string;
-}
-
-export interface Investment {
-  id: string;
-  title: string;
-  description: string;
-  imageUrl: string;
-  link?: string;
-  ownership: string;
-  industry: string;
-  founded: string;
-  location: string;
-}
-
-export const projects: Project[] = [
+export const projects = [
   {
     id: '1',
     title: 'Smart City Infrastructure',
@@ -54,7 +31,7 @@ export const projects: Project[] = [
   }
 ];
 
-export const investments: Investment[] = [
+export const investments = [
   {
     id: '1',
     title: 'DayDream Technologies',

@@ -1,18 +1,14 @@
-'use client';
-
 import { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Sphere } from '@react-three/drei';
 import { motion } from 'framer-motion';
-import Card from '../components/Card.js';
-import { projects, investments } from '../data/content.js';
-import AnimatedBackground from '../components/AnimatedBackground.js';
-import CSSAnimatedBackground from '../components/CSSAnimatedBackground.js';
-import FloatingParticles from '../components/FloatingParticles.js';
-import AnimatedStats from '../components/AnimatedStats.js';
-import AnimatedTimeline from '../components/AnimatedTimeline.js';
-import FloatingCard from '../components/FloatingCard.js';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
+import { investments } from '../data/content.js';
+import AnimatedBackground from '../components/AnimatedBackground.jsx';
+import CSSAnimatedBackground from '../components/CSSAnimatedBackground.jsx';
+import AnimatedStats from '../components/AnimatedStats.jsx';
+import AnimatedTimeline from '../components/AnimatedTimeline.jsx';
+import FloatingCard from '../components/FloatingCard.jsx';
 
 const Hero3D = () => {
   return (
@@ -36,9 +32,6 @@ const Hero3D = () => {
 export default function Home() {
   return (
     <div className="min-h-screen">
-      {/* Floating Particles */}
-      <FloatingParticles />
-      
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         {/* CSS Animated Background */}
@@ -87,64 +80,30 @@ export default function Home() {
             transition={{ delay: 1, duration: 0.8 }}
             className="flex flex-col sm:flex-row gap-4 justify-center mt-8"
           >
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 bg-accent text-white rounded-lg font-semibold hover:bg-accent-light transition-colors"
-            >
-              Explore Projects
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 border border-accent text-accent rounded-lg font-semibold hover:bg-accent/10 transition-colors"
-            >
-              View Investments
-            </motion.button>
+            <Link to="/projects">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-3 bg-accent text-white rounded-lg font-semibold hover:bg-accent-light transition-colors"
+              >
+                Explore Projects
+              </motion.button>
+            </Link>
+            <Link to="/investments">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-3 border border-accent text-accent rounded-lg font-semibold hover:bg-accent/10 transition-colors"
+              >
+                View Investments
+              </motion.button>
+            </Link>
           </motion.div>
         </motion.div>
       </section>
 
       {/* Animated Stats Section */}
       <AnimatedStats />
-
-      {/* Projects Preview Section */}
-      <section className="py-20 bg-primary-light">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="flex justify-between items-center mb-8"
-          >
-            <h2 className="section-title mb-0">Featured Projects</h2>
-            <Link 
-              href="/projects"
-              className="text-accent hover:text-accent-light transition-colors"
-            >
-              View All Projects →
-            </Link>
-          </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <motion.div
-                key={project.id}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-              >
-                <Link href={`/projects?id=${project.id}`}>
-                  <Card
-                    title={project.title}
-                    description={project.description}
-                    imageUrl={project.imageUrl}
-                  />
-                </Link>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Animated Timeline Section */}
       <AnimatedTimeline />
@@ -160,7 +119,7 @@ export default function Home() {
           >
             <h2 className="section-title mb-0">Our Investments</h2>
             <Link 
-              href="/investments"
+              to="/investments"
               className="text-accent hover:text-accent-light transition-colors"
             >
               View All Investments →
@@ -174,7 +133,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Link href={`/investments?id=${investment.id}`}>
+                <Link to={`/investments?id=${investment.id}`}>
                   <Card
                     title={investment.title}
                     description={investment.description}
@@ -213,13 +172,15 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-3 bg-accent text-white rounded-lg font-semibold hover:bg-accent-light transition-colors"
-              >
-                Get Started
-              </motion.button>
+              <Link to="/contact">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-8 py-3 bg-accent text-white rounded-lg font-semibold hover:bg-accent-light transition-colors"
+                >
+                  Get Started
+                </motion.button>
+              </Link>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

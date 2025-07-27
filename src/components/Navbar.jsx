@@ -1,7 +1,5 @@
-'use client';
-
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
@@ -20,7 +18,8 @@ const Navbar = () => {
   const navItems = [
     { href: "/", label: "Home" },
     { href: "/projects", label: "Projects" },
-    { href: "/investments", label: "Investments" }
+    { href: "/investments", label: "Investments" },
+    { href: "/contact", label: "Contact" }
   ];
 
   return (
@@ -70,7 +69,7 @@ const Navbar = () => {
             whileTap={{ scale: 0.95 }}
             className="relative"
           >
-            <Link href="/" className="text-2xl font-bold text-white relative z-10">
+            <Link to="/" className="text-2xl font-bold text-white relative z-10">
               <span className="bg-gradient-to-r from-white to-accent bg-clip-text text-transparent">
                 Wasilewski Holdings
               </span>
@@ -95,7 +94,7 @@ const Navbar = () => {
                   className="relative"
                 >
                   <Link
-                    href={item.href}
+                    to={item.href}
                     className="relative text-gray-300 hover:text-white px-4 py-3 rounded-lg text-sm font-medium transition-all duration-300 group overflow-hidden"
                   >
                     <span className="relative z-10">{item.label}</span>
@@ -170,7 +169,7 @@ const Navbar = () => {
                     transition={{ delay: index * 0.1 }}
                   >
                     <Link
-                      href={item.href}
+                      to={item.href}
                       onClick={() => setIsMobileMenuOpen(false)}
                       className="block text-gray-300 hover:text-white px-4 py-3 rounded-lg text-base font-medium transition-all duration-300 hover:bg-accent/10 border border-transparent hover:border-accent/20"
                     >

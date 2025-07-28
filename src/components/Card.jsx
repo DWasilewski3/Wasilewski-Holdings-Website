@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 
-const Card = ({ title, description, imageUrl, additionalInfo }) => {
+const Card = ({ title, description, imageUrl, additionalInfo, externalLink }) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -11,7 +11,7 @@ const Card = ({ title, description, imageUrl, additionalInfo }) => {
   const y = useTransform(scrollYProgress, [0, 1], [0, -50]);
   const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 0]);
 
-  return (
+  const cardContent = (
     <motion.div
       ref={ref}
       initial={{ opacity: 0, y: 100, scale: 0.8 }}
@@ -28,7 +28,7 @@ const Card = ({ title, description, imageUrl, additionalInfo }) => {
         stiffness: 80
       }}
       style={{ y, opacity }}
-      className="card group relative overflow-hidden bg-gradient-to-br from-primary-light/20 to-primary/20 backdrop-blur-sm border border-accent/20 rounded-xl"
+      className="card group relative overflow-hidden bg-gradient-to-br from-primary-light/20 to-primary/20 backdrop-blur-sm border border-accent/20 rounded-xl cursor-pointer"
     >
       <div className="relative h-48 w-full mb-4 overflow-hidden">
         <motion.div
@@ -140,6 +140,22 @@ const Card = ({ title, description, imageUrl, additionalInfo }) => {
       />
     </motion.div>
   );
+
+  // If external link is provided, wrap in anchor tag
+  if (externalLink) {
+    return (
+      <a 
+        href={externalLink} 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="block"
+      >
+        {cardContent}
+      </a>
+    );
+  }
+
+  return cardContent;
 };
 
 export default Card; 

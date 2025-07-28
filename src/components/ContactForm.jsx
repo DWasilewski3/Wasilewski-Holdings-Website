@@ -196,25 +196,7 @@ const ContactForm = () => {
             ❌ Sorry, there was an error sending your message. Please try again or contact us directly.
           </motion.div>
         )}
-
-        {/* Contact Info */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
-          className="mt-8 pt-8 border-t border-accent/20"
-        >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-center">
-            <div>
-              <h3 className="text-lg font-semibold text-accent mb-2">Email</h3>
-              <p className="text-gray-300">contact@wasilewski-holdings.com</p>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold text-accent mb-2">Location</h3>
-              <p className="text-gray-300">Michigan, United States</p>
-            </div>
-          </div>
-        </motion.div>
+        
       </div>
     </motion.div>
   );

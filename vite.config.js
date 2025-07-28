@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     port: 2000
   },
-  base: process.env.NODE_ENV === 'production' ? '/Wasilewski-Holdings-Website/' : '/',
+  base: '/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',

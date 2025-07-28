@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Card from '../components/Card.jsx';
-import { projects } from '../data/content.js';
+import { goals } from '../data/content.js';
 
-export default function Projects() {
+export default function Goals() {
   return (
     <div className="min-h-screen py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -13,28 +13,28 @@ export default function Projects() {
           transition={{ duration: 1.5 }}
           className="text-center mb-16"
         >
-          <h1 className="text-5xl font-bold mb-6">Our Projects</h1>
+          <h1 className="text-5xl font-bold mb-6">Our Strategic Goals</h1>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Discover our innovative projects that are shaping the future across various industries.
+            Discover our ambitious goals and strategic initiatives that drive innovation and sustainable growth across diverse sectors.
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+          {goals.map((goal, index) => (
             <motion.div
-              key={project.id}
+              key={goal.id}
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2, delay: index * 0.3 }}
             >
               <Card
-                title={project.title}
-                description={project.description}
-                imageUrl={project.imageUrl}
+                title={goal.title}
+                description={goal.description}
+                imageUrl={goal.imageUrl}
                 additionalInfo={{
-                  status: project.status,
-                  timeline: project.timeline,
-                  category: project.category
+                  status: goal.status,
+                  timeline: goal.timeline,
+                  category: goal.category
                 }}
               />
             </motion.div>

@@ -1,1 +1,64 @@
- 
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cloudGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00cc66;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00994d;stop-opacity:1" />
+    </linearGradient>
+    <filter id="cardGlow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="200" height="200" fill="url(#cloudGradient)" opacity="0.05"/>
+  
+  <!-- Credit card shape -->
+  <rect x="40" y="60" width="120" height="80" rx="8" fill="white" stroke="#00cc66" stroke-width="2" filter="url(#cardGlow)"/>
+  
+  <!-- Card chip -->
+  <rect x="55" y="75" width="20" height="15" fill="#333" rx="2"/>
+  <rect x="57" y="77" width="16" height="11" fill="#666" rx="1"/>
+  
+  <!-- NFC symbol -->
+  <g transform="translate(100, 95)">
+    <circle cx="0" cy="0" r="8" fill="none" stroke="#00cc66" stroke-width="2"/>
+    <circle cx="0" cy="0" r="4" fill="#00cc66"/>
+    <path d="M-12 0 L-8 0 M8 0 L12 0" stroke="#00cc66" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Cloud elements -->
+  <g transform="translate(30, 30)">
+    <path d="M0 15 Q-10 5 0 0 Q10 5 0 15 Z" fill="#00cc66" opacity="0.3"/>
+  </g>
+  <g transform="translate(170, 40)">
+    <path d="M0 12 Q-8 4 0 0 Q8 4 0 12 Z" fill="#00cc66" opacity="0.4"/>
+  </g>
+  <g transform="translate(160, 160)">
+    <path d="M0 10 Q-6 2 0 0 Q6 2 0 10 Z" fill="#00cc66" opacity="0.3"/>
+  </g>
+  
+  <!-- Connection lines -->
+  <line x1="30" y1="30" x2="40" y2="60" stroke="#00cc66" stroke-width="1" opacity="0.5"/>
+  <line x1="170" y1="40" x2="160" y2="60" stroke="#00cc66" stroke-width="1" opacity="0.5"/>
+  <line x1="160" y1="160" x2="160" y2="140" stroke="#00cc66" stroke-width="1" opacity="0.5"/>
+  
+  <!-- Floating data dots -->
+  <circle cx="25" cy="25" r="2" fill="#00cc66" opacity="0.6">
+    <animate attributeName="opacity" values="0.6;0.2;0.6" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="175" cy="35" r="1.5" fill="#00cc66" opacity="0.5">
+    <animate attributeName="opacity" values="0.5;0.1;0.5" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="165" cy="165" r="2" fill="#00cc66" opacity="0.4">
+    <animate attributeName="opacity" values="0.4;0.1;0.4" dur="1.8s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Company name -->
+  <text x="100" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#00cc66">
+    Cloud Cards
+  </text>
+</svg> 

@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,7 +18,7 @@ const Navbar = () => {
 
   const navItems = [
     { href: "/", label: "Home" },
-    { href: "/projects", label: "Projects" },
+    { href: "/goals", label: "Goals" },
     { href: "/investments", label: "Investments" },
     { href: "/contact", label: "Contact" }
   ];
@@ -95,24 +96,39 @@ const Navbar = () => {
                 >
                   <Link
                     to={item.href}
-                    className="relative text-gray-300 hover:text-white px-4 py-3 rounded-lg text-sm font-medium transition-all duration-300 group overflow-hidden"
+                    className={`relative px-4 py-3 rounded-lg text-sm font-medium transition-all duration-300 group overflow-hidden ${
+                      location.pathname === item.href 
+                        ? 'text-white bg-accent/20 border border-accent/40' 
+                        : 'text-gray-300 hover:text-white'
+                    }`}
                   >
                     <span className="relative z-10">{item.label}</span>
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-accent/20 to-accent/10 rounded-lg"
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileHover={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.3 }}
-                    />
+                    {location.pathname === item.href ? (
+                      <motion.div
+                        className="absolute inset-0 bg-gradient-to-r from-accent/30 to-accent/20 rounded-lg"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.3 }}
+                      />
+                    ) : (
+                      <motion.div
+                        className="absolute inset-0 bg-gradient-to-r from-accent/20 to-accent/10 rounded-lg"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileHover={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.3 }}
+                      />
+                    )}
                     <motion.div
                       className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-accent to-accent/60 rounded-full"
-                      initial={{ width: 0 }}
+                      initial={{ width: location.pathname === item.href ? "100%" : 0 }}
+                      animate={{ width: location.pathname === item.href ? "100%" : 0 }}
                       whileHover={{ width: "100%" }}
                       transition={{ duration: 0.3 }}
                     />
                     <motion.div
                       className="absolute inset-0 border border-accent/20 rounded-lg"
-                      initial={{ opacity: 0 }}
+                      initial={{ opacity: location.pathname === item.href ? 1 : 0 }}
+                      animate={{ opacity: location.pathname === item.href ? 1 : 0 }}
                       whileHover={{ opacity: 1 }}
                       transition={{ duration: 0.3 }}
                     />
@@ -171,7 +187,11 @@ const Navbar = () => {
                     <Link
                       to={item.href}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="block text-gray-300 hover:text-white px-4 py-3 rounded-lg text-base font-medium transition-all duration-300 hover:bg-accent/10 border border-transparent hover:border-accent/20"
+                      className={`block px-4 py-3 rounded-lg text-base font-medium transition-all duration-300 border ${
+                        location.pathname === item.href 
+                          ? 'text-white bg-accent/20 border-accent/40' 
+                          : 'text-gray-300 hover:text-white hover:bg-accent/10 border-transparent hover:border-accent/20'
+                      }`}
                     >
                       {item.label}
                     </Link>

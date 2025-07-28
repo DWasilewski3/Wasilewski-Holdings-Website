@@ -1,52 +1,55 @@
-export const projects = [
+export const goals = [
   {
     id: '1',
-    title: 'PowerShade',
-    description: 'Revolutionizing beach experiences with solar-powered beach umbrellas that keep devices charged while enjoying the sun and surf. PowerShade combines premium UV protection with cutting-edge solar technology to create the ultimate beach companion.',
-    imageUrl: '/images/powershade-logo.svg',
-    link: 'https://dwasilewski3.github.io/PowerShade-Website/',
-    status: 'Active',
-    timeline: '2024-2025',
-    category: 'Consumer Technology',
-    technologies: ['Solar Power', 'USB Charging', 'UV Protection', 'Battery Storage'],
-    impact: 'Enhancing beach experiences with sustainable power solutions',
-    highlights: 'Solar-powered beach umbrellas with USB charging ports and battery storage'
+    title: 'Wealth Creation & Innovation',
+    description: 'Establish Wasilewski Holdings as a premier wealth creation platform through innovative investments and strategic partnerships. We focus on building sustainable wealth while driving technological advancement and market disruption.',
+    imageUrl: '/images/smart-city.svg',
+    link: '/goals/wealth-creation',
+    status: 'In Progress',
+    timeline: '2024-2030',
+    category: 'Strategic Leadership',
+    technologies: ['Investment Strategy', 'Innovation Management', 'Market Analysis', 'Portfolio Optimization'],
+    impact: 'Creating sustainable wealth through strategic innovation',
+    highlights: 'Premier wealth creation platform with innovative investment strategies'
   },
   {
     id: '2',
-    title: 'Smart City Infrastructure',
-    description: 'Revolutionizing urban living through connected infrastructure and sustainable solutions. Our smart city initiative integrates IoT sensors, AI-powered traffic management, and renewable energy systems to create efficient, eco-friendly urban environments.',
-    imageUrl: '/images/smart-city.svg',
-    link: '/projects/smart-city',
-    status: 'In Progress',
-    timeline: '2024-2025',
-    category: 'Urban Development',
-    technologies: ['IoT', 'AI', 'Smart Grid', 'Traffic Management'],
-    impact: 'Reducing urban carbon footprint by 40%'
+    title: 'World-Class Technology Portfolio',
+    description: 'Build a world-class technology portfolio that spans cutting-edge sectors including AI, renewable energy, and digital transformation. Our goal is to create a comprehensive ecosystem of innovative companies that collectively drive technological advancement.',
+    imageUrl: '/images/ai-lab.svg',
+    link: '/goals/world-class-tech',
+    status: 'Active',
+    timeline: '2024-2027',
+    category: 'Portfolio Growth',
+    technologies: ['Artificial Intelligence', 'Renewable Energy', 'Digital Transformation', 'Emerging Tech'],
+    impact: 'Creating a world-class technology ecosystem',
+    highlights: 'Comprehensive portfolio of cutting-edge technology companies'
   },
   {
     id: '3',
-    title: 'Renewable Energy Grid',
-    description: 'Building the future of energy distribution with advanced renewable technology. This project focuses on creating a decentralized energy network powered by solar, wind, and battery storage systems for sustainable power generation.',
+    title: 'Workforce Development & Growth',
+    description: 'Drive workforce development and economic growth in Michigan and surrounding regions through strategic investments and partnerships. We aim to create high-quality jobs, foster innovation hubs, and establish the region as a technology leader.',
     imageUrl: '/images/energy-grid.svg',
-    link: '/projects/energy-grid',
+    link: '/goals/workforce-development',
     status: 'Planning',
-    timeline: '2024-2026',
-    category: 'Energy',
-    technologies: ['Solar Power', 'Wind Energy', 'Battery Storage', 'Smart Grid'],
-    impact: '100% renewable energy for target communities'
+    timeline: '2024-2028',
+    category: 'Economic Development',
+    technologies: ['Job Creation', 'Innovation Hubs', 'Technology Clusters', 'Partnership Networks'],
+    impact: 'Transforming Michigan into a technology innovation hub',
+    highlights: 'Regional workforce development through strategic investments'
   },
   {
     id: '4',
-    title: 'AI Research Lab',
-    description: 'Pushing the boundaries of artificial intelligence and machine learning. Our AI lab focuses on developing cutting-edge algorithms for predictive analytics, natural language processing, and autonomous systems.',
-    imageUrl: '/images/ai-lab.svg',
-    link: '/projects/ai-lab',
+    title: 'Worldwide Market Expansion',
+    description: 'Expand Wasilewski Holdings presence into worldwide markets by 2026. We aim to establish strategic partnerships, enter emerging markets, and create a global network of innovative companies across diverse international markets.',
+    imageUrl: '/images/powershade-logo.svg',
+    link: '/goals/worldwide-expansion',
     status: 'Active',
-    timeline: '2023-2025',
-    category: 'Technology',
-    technologies: ['Machine Learning', 'Neural Networks', 'NLP', 'Computer Vision'],
-    impact: 'Advancing AI capabilities for business automation'
+    timeline: '2024-2026',
+    category: 'Global Expansion',
+    technologies: ['International Markets', 'Strategic Partnerships', 'Emerging Markets', 'Global Networks'],
+    impact: 'Establishing worldwide market presence and partnerships',
+    highlights: 'International expansion and global market leadership'
   }
 ];
 

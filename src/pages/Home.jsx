@@ -4,6 +4,7 @@ import { OrbitControls, Sphere } from '@react-three/drei';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { investments } from '../data/content.js';
+import Card from '../components/Card.jsx';
 import AnimatedBackground from '../components/AnimatedBackground.jsx';
 import CSSAnimatedBackground from '../components/CSSAnimatedBackground.jsx';
 import AnimatedStats from '../components/AnimatedStats.jsx';
@@ -48,6 +49,29 @@ export default function Home() {
           transition={{ duration: 0.8 }}
           className="relative z-10 text-center px-4"
         >
+          {/* Large fading green W background */}
+          <motion.div
+            className="absolute inset-0 flex items-center justify-center pointer-events-none"
+            style={{ zIndex: -1 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.03 }}
+            transition={{ duration: 1.5, delay: 0.5 }}
+          >
+            <div 
+              className="text-white/5 font-black select-none"
+              style={{
+                fontSize: 'min(40vw, 25rem)',
+                lineHeight: 0.8,
+                textShadow: '0 0 100px rgba(0, 204, 102, 0.1)',
+                filter: 'blur(0.5px)',
+                transform: 'scale(1.2)',
+                letterSpacing: '-0.05em'
+              }}
+            >
+              W
+            </div>
+          </motion.div>
+          
           <div className="relative w-full h-32 flex items-center justify-center">
             <AnimatedBackground />
             <motion.h1 
@@ -80,13 +104,13 @@ export default function Home() {
             transition={{ delay: 1, duration: 0.8 }}
             className="flex flex-col sm:flex-row gap-4 justify-center mt-8"
           >
-            <Link to="/projects">
+            <Link to="/goals">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-3 bg-accent text-white rounded-lg font-semibold hover:bg-accent-light transition-colors"
               >
-                Explore Projects
+                Explore Goals
               </motion.button>
             </Link>
             <Link to="/investments">
@@ -133,13 +157,12 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Link to={`/investments?id=${investment.id}`}>
-                  <Card
-                    title={investment.title}
-                    description={investment.description}
-                    imageUrl={investment.imageUrl}
-                  />
-                </Link>
+                <Card
+                  title={investment.title}
+                  description={investment.description}
+                  imageUrl={investment.imageUrl}
+                  externalLink={investment.website}
+                />
               </motion.div>
             ))}
           </div>
@@ -181,13 +204,6 @@ export default function Home() {
                   Get Started
                 </motion.button>
               </Link>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-3 border border-accent text-accent rounded-lg font-semibold hover:bg-accent/10 transition-colors"
-              >
-                Learn More
-              </motion.button>
             </motion.div>
           </FloatingCard>
         </div>

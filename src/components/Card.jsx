@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 
-const Card = ({ title, description, imageUrl, additionalInfo, externalLink }) => {
+const Card = ({ title, description, imageUrl, logoUrl, additionalInfo, externalLink }) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -34,14 +34,32 @@ const Card = ({ title, description, imageUrl, additionalInfo, externalLink }) =>
         <motion.div
           whileHover={{ scale: 1.1 }}
           transition={{ duration: 0.3 }}
-          className="relative h-full w-full"
+          className="relative h-full w-full bg-gradient-to-br from-gray-800 to-gray-900"
         >
+          {/* Main image */}
           <img
             src={imageUrl}
             alt={title}
-            className="object-cover rounded-t-xl w-full h-full"
+            className="object-contain rounded-t-xl w-full h-full p-4"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+          
+          {/* Logo overlay in bottom right if available */}
+          {logoUrl && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.5, duration: 0.5 }}
+              className="absolute bottom-2 right-2 w-16 h-16 bg-white/10 backdrop-blur-sm rounded-lg p-2"
+            >
+              <img
+                src={logoUrl}
+                alt={`${title} logo`}
+                className="w-full h-full object-contain"
+              />
+            </motion.div>
+          )}
+          
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
         </motion.div>
         
         {/* Floating badge */}

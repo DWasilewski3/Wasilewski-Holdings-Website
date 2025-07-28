@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { investments } from '../data/content.js';
 import Card from '../components/Card.jsx';
+import CompanyLogo from '../components/CompanyLogo.jsx';
 import AnimatedBackground from '../components/AnimatedBackground.jsx';
 import CSSAnimatedBackground from '../components/CSSAnimatedBackground.jsx';
 import AnimatedStats from '../components/AnimatedStats.jsx';
@@ -32,105 +33,160 @@ const Hero3D = () => {
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div className="relative">
+      <CSSAnimatedBackground />
+      
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        {/* CSS Animated Background */}
-        <CSSAnimatedBackground />
-        
-        {/* 3D Animated Background */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Hero3D />
+          <AnimatedBackground />
         </div>
         
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="relative z-10 text-center px-4"
-        >
-          {/* Large fading green W background */}
+        <div className="relative z-10 text-center px-4">
           <motion.div
-            className="absolute inset-0 flex items-center justify-center pointer-events-none"
-            style={{ zIndex: -1 }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.03 }}
-            transition={{ duration: 1.5, delay: 0.5 }}
-          >
-            <div 
-              className="text-white/5 font-black select-none"
-              style={{
-                fontSize: 'min(40vw, 25rem)',
-                lineHeight: 0.8,
-                textShadow: '0 0 100px rgba(0, 204, 102, 0.1)',
-                filter: 'blur(0.5px)',
-                transform: 'scale(1.2)',
-                letterSpacing: '-0.05em'
-              }}
-            >
-              W
-            </div>
-          </motion.div>
-          
-          <div className="relative w-full h-32 flex items-center justify-center">
-            <AnimatedBackground />
-            <motion.h1 
-              className="text-5xl md:text-7xl font-bold mb-6 relative z-10"
-              animate={{ 
-                textShadow: [
-                  "0 0 20px rgba(0, 204, 102, 0.5)",
-                  "0 0 40px rgba(0, 204, 102, 0.8)",
-                  "0 0 20px rgba(0, 204, 102, 0.5)"
-                ]
-              }}
-              transition={{ duration: 2, repeat: Infinity }}
-            >
-              Wasilewski Holdings
-            </motion.h1>
-          </div>
-          <motion.p 
-            className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-          >
-            Building the future through strategic investments and innovative projects
-          </motion.p>
-          
-          {/* Floating action buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 0.8 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center mt-8"
+            transition={{ duration: 1.5 }}
+            className="mb-8"
           >
-            <Link to="/goals">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-3 bg-accent text-white rounded-lg font-semibold hover:bg-accent-light transition-colors"
-              >
-                Explore Goals
-              </motion.button>
+            <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-white via-accent to-white bg-clip-text text-transparent">
+              Wasilewski Holdings
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">
+              Driving innovation and sustainable growth through strategic investments in cutting-edge technology companies.
+            </p>
+          </motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.5 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          >
+            <Link
+              to="/investments"
+              className="bg-accent hover:bg-accent-light text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105"
+            >
+              Explore Investments
             </Link>
-            <Link to="/investments">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-3 border border-accent text-accent rounded-lg font-semibold hover:bg-accent/10 transition-colors"
-              >
-                View Investments
-              </motion.button>
+            <Link
+              to="/goals"
+              className="border border-accent text-accent hover:bg-accent hover:text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105"
+            >
+              View Goals
             </Link>
           </motion.div>
-        </motion.div>
+        </div>
+        
+        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-10">
+          <motion.div
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 2, repeat: Infinity }}
+            className="w-6 h-10 border-2 border-white rounded-full flex justify-center"
+          >
+            <motion.div
+              animate={{ y: [0, 12, 0] }}
+              transition={{ duration: 2, repeat: Infinity }}
+              className="w-1 h-3 bg-white rounded-full mt-2"
+            />
+          </motion.div>
+        </div>
       </section>
 
-      {/* Animated Stats Section */}
-      <AnimatedStats />
+      {/* Company Logos Showcase */}
+      <section className="py-20 bg-gradient-to-b from-transparent to-primary/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl font-bold mb-4">Our Portfolio Companies</h2>
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+              Discover the innovative companies we're proud to invest in and support.
+            </p>
+          </motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          >
+            {investments.map((investment, index) => (
+              <motion.div
+                key={investment.id}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
+                className="text-center"
+              >
+                <div className="mb-4 flex justify-center">
+                  <CompanyLogo 
+                    logoUrl={investment.logoUrl} 
+                    title={investment.title}
+                    className="w-32 h-32"
+                  />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">{investment.title}</h3>
+                <p className="text-gray-300 text-sm mb-4">{investment.description}</p>
+                <a
+                  href={investment.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-accent/20 text-accent hover:bg-accent hover:text-white px-4 py-2 rounded-lg transition-colors duration-300"
+                >
+                  Visit Website
+                </a>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
 
-      {/* Animated Timeline Section */}
-      <AnimatedTimeline />
+      {/* Stats Section */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <AnimatedStats />
+        </div>
+      </section>
+
+      {/* Timeline Section */}
+      <section className="py-20 bg-gradient-to-b from-primary/10 to-transparent">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl font-bold mb-4">Our Journey</h2>
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+              Track our progress and milestones as we build a world-class technology portfolio.
+            </p>
+          </motion.div>
+          <AnimatedTimeline />
+        </div>
+      </section>
+
+      {/* Floating Cards Section */}
+      <section className="py-20 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl font-bold mb-4">Innovation Highlights</h2>
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+              Explore our key initiatives and breakthrough technologies.
+            </p>
+          </motion.div>
+          <FloatingCard />
+        </div>
+      </section>
 
       {/* Investments Preview Section */}
       <section className="py-20">
@@ -161,51 +217,12 @@ export default function Home() {
                   title={investment.title}
                   description={investment.description}
                   imageUrl={investment.imageUrl}
+                  logoUrl={investment.logoUrl}
                   externalLink={investment.website}
                 />
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Call to Action Section */}
-      <section className="py-20 bg-gradient-to-r from-primary-dark to-primary">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <FloatingCard delay={0.2}>
-            <motion.h2 
-              className="text-4xl font-bold mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              Ready to Build the Future?
-            </motion.h2>
-            <motion.p 
-              className="text-xl text-gray-300 mb-8"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              Join us in creating innovative solutions and strategic investments that shape tomorrow's world.
-            </motion.p>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center"
-            >
-              <Link to="/contact">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-8 py-3 bg-accent text-white rounded-lg font-semibold hover:bg-accent-light transition-colors"
-                >
-                  Get Started
-                </motion.button>
-              </Link>
-            </motion.div>
-          </FloatingCard>
         </div>
       </section>
     </div>

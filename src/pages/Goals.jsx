@@ -31,6 +31,7 @@ export default function Goals() {
                 title={goal.title}
                 description={goal.description}
                 imageUrl={goal.imageUrl}
+                logoUrl={goal.logoUrl}
                 additionalInfo={{
                   status: goal.status,
                   timeline: goal.timeline,

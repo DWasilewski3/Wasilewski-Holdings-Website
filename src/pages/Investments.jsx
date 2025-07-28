@@ -31,6 +31,7 @@ export default function Investments() {
                 title={investment.title}
                 description={investment.description}
                 imageUrl={investment.imageUrl}
+                logoUrl={investment.logoUrl}
                 externalLink={investment.website}
                 additionalInfo={{
                   ownership: investment.ownership,

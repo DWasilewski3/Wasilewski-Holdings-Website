@@ -51,29 +51,24 @@ const TimelineItem = ({ year, title, description, index }) => {
 const AnimatedTimeline = () => {
   const timelineData = [
     {
-      year: "2020",
+      year: "2024",
+      title: "DayDream",
+      description: "Established Wasilewski Holdings with a vision for innovative investments."
+    },
+    {
+      year: "2025",
       title: "Foundation",
       description: "Established Wasilewski Holdings with a vision for innovative investments."
     },
     {
-      year: "2021",
-      title: "First Investments",
-      description: "Made strategic investments in emerging technology companies."
-    },
-    {
-      year: "2022",
+      year: "2025",
       title: "Portfolio Growth",
-      description: "Expanded portfolio with diverse projects across multiple industries."
+      description: "Expanded portfolio to include hardware companies by founding Kloud Technologies and PowerShade."
     },
     {
-      year: "2023",
-      title: "Innovation Lab",
-      description: "Launched internal innovation lab for cutting-edge research projects."
-    },
-    {
-      year: "2024",
-      title: "Global Expansion",
-      description: "Expanded operations internationally with new partnerships."
+      year: "Up Next",
+      title: "Collaboration",
+      description: "The current focus of Wasilewski Holdings is to enhance collaboration within our portfolio to optimize clients' experiences."
     }
   ];
 

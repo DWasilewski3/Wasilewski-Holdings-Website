@@ -49,7 +49,7 @@ export default function Home() {
             transition={{ duration: 1.5 }}
             className="mb-8"
           >
-            <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-white via-accent to-white bg-clip-text text-transparent">
+            <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-gray-300 via-accent to-gray-300 bg-clip-text text-transparent">
               Wasilewski Holdings
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">

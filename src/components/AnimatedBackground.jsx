@@ -181,7 +181,7 @@ const AnimatedBackground = () => {
         <FloatingParticles />
         <FloatingShapes />
         <WaveEffect />
-        <OrbitingRings />
+        {/* <OrbitingRings /> */}
       </Canvas>
     </div>
   );

@@ -71,7 +71,7 @@ const Navbar = () => {
             className="relative"
           >
             <Link to="/" className="text-2xl font-bold text-white relative z-10">
-              <span className="bg-gradient-to-r from-white to-accent bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-gray-300 to-accent bg-clip-text text-transparent">
                 Wasilewski Holdings
               </span>
             </Link>

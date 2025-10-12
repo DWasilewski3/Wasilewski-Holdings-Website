@@ -3,7 +3,7 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Sphere } from '@react-three/drei';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { investments } from '../data/content.js';
+import { investments, projects } from '../data/content.js';
 import Card from '../components/Card.jsx';
 import CompanyLogo from '../components/CompanyLogo.jsx';
 import AnimatedBackground from '../components/AnimatedBackground.jsx';
@@ -184,7 +184,54 @@ export default function Home() {
               Explore our key initiatives and breakthrough technologies.
             </p>
           </motion.div>
-          <FloatingCard />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project, index) => (
+              <motion.div
+                key={project.id}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
+                className="relative"
+              >
+                <FloatingCard delay={index * 0.1}>
+                  <div className="text-center">
+                    <div className="mb-4 flex justify-center">
+                      <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-accent/20">
+                        <img 
+                          src={project.imageUrl} 
+                          alt={project.title}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    </div>
+                    <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                    <p className="text-gray-300 text-sm mb-4">{project.description}</p>
+                    <div className="mb-4">
+                      <span className="inline-block bg-accent/20 text-accent px-3 py-1 rounded-full text-xs font-semibold">
+                        {project.category}
+                      </span>
+                    </div>
+                    <div className="space-y-2 mb-4">
+                      {project.features.slice(0, 3).map((feature, idx) => (
+                        <div key={idx} className="text-xs text-gray-400 flex items-center">
+                          <span className="w-1 h-1 bg-accent rounded-full mr-2"></span>
+                          {feature}
+                        </div>
+                      ))}
+                    </div>
+                    <a
+                      href={project.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block bg-accent/20 text-accent hover:bg-accent hover:text-white px-4 py-2 rounded-lg transition-colors duration-300 text-sm font-semibold"
+                    >
+                      Learn More
+                    </a>
+                  </div>
+                </FloatingCard>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 

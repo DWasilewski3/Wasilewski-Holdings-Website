@@ -100,4 +100,27 @@ export const investments = [
     website: 'https://www.cloud-cards.link/',
     highlights: 'Modernizing professional networking with NFC technology'
   }
+];
+
+export const projects = [
+  {
+    id: '1',
+    title: 'Cognition Daily',
+    description: 'A comprehensive platform dedicated to advancing cognitive science education and research. Cognition Daily provides accessible insights into psychology, neuroscience, and cognitive research, making complex scientific concepts understandable for diverse audiences.',
+    imageUrl: './images/cognition-daily-brain.jpg',
+    logoUrl: './images/cognition-daily-brain.jpg',
+    link: 'https://cognitiondaily.net',
+    category: 'Healthcare Technology',
+    founded: '2024',
+    location: 'Michigan',
+    services: ['Cognitive Science Education', 'Research Insights', 'Scientific Communication', 'Educational Content'],
+    website: 'https://cognitiondaily.net',
+    highlights: 'Democratizing access to cognitive science knowledge and research',
+    features: [
+      'Daily cognitive science insights',
+      'Research-backed educational content',
+      'Accessible scientific communication',
+      'Community-driven learning platform'
+    ]
+  }
 ]; 

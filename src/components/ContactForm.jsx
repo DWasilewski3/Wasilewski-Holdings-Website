@@ -31,7 +31,7 @@ const ContactForm = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          access_key: process.env.REACT_APP_WEB3FORM_KEY || 'YOUR_WEB3FORM_KEY',
+          access_key: import.meta.env.VITE_WEB3FORM_KEY || '5d1d2b64-0d34-43a7-9370-9e0de284a6c0',
           ...formData,
           subject: `New Contact from ${formData.name} - ${formData.subject}`,
         }),

@@ -11,6 +11,7 @@ import CSSAnimatedBackground from '../components/CSSAnimatedBackground.jsx';
 import AnimatedStats from '../components/AnimatedStats.jsx';
 import AnimatedTimeline from '../components/AnimatedTimeline.jsx';
 import FloatingCard from '../components/FloatingCard.jsx';
+import Maltese3DCross from '../components/Maltese3DCross.jsx';
 
 const Hero3D = () => {
   return (
@@ -193,42 +194,89 @@ export default function Home() {
                 transition={{ duration: 0.8, delay: index * 0.2 }}
                 className="relative"
               >
-                <FloatingCard delay={index * 0.1}>
-                  <div className="text-center">
-                    <div className="mb-4 flex justify-center">
-                      <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-accent/20">
-                        <img 
-                          src={project.imageUrl} 
-                          alt={project.title}
-                          className="w-full h-full object-cover"
-                        />
+                {project.id === '2' ? (
+                  // Special rendering for 3D Games
+                  <FloatingCard delay={index * 0.1}>
+                    <div className="flex flex-col h-full">
+                      <div className="mb-4 flex justify-center flex-grow">
+                        <div className="w-24 h-24 rounded-full border-2 border-accent/20 overflow-hidden">
+                          <Canvas camera={{ position: [0, 0, 3], fov: 50 }}>
+                            <ambientLight intensity={0.7} />
+                            <directionalLight position={[5, 5, 5]} intensity={1} castShadow />
+                            <directionalLight position={[-3, -3, 2]} intensity={0.5} color="#00cc66" />
+                            <pointLight position={[0, 0, 2]} intensity={0.6} color="#00cc66" />
+                            <Suspense fallback={null}>
+                              <Maltese3DCross />
+                            </Suspense>
+                          </Canvas>
+                        </div>
+                      </div>
+                      <div className="text-center flex-shrink-0">
+                        <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                        <p className="text-gray-300 text-sm mb-4">{project.description}</p>
+                        <div className="mb-4">
+                          <span className="inline-block bg-accent/20 text-accent px-3 py-1 rounded-full text-xs font-semibold">
+                            {project.category}
+                          </span>
+                        </div>
+                        <div className="space-y-2 mb-4">
+                          {project.features.slice(0, 3).map((feature, idx) => (
+                            <div key={idx} className="text-xs text-gray-400 flex items-center">
+                              <span className="w-1 h-1 bg-accent rounded-full mr-2"></span>
+                              {feature}
+                            </div>
+                          ))}
+                        </div>
+                        <a
+                          href={project.website}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-block bg-accent/20 text-accent hover:bg-accent hover:text-white px-4 py-2 rounded-lg transition-colors duration-300 text-sm font-semibold"
+                        >
+                          Play Now
+                        </a>
                       </div>
                     </div>
-                    <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                    <p className="text-gray-300 text-sm mb-4">{project.description}</p>
-                    <div className="mb-4">
-                      <span className="inline-block bg-accent/20 text-accent px-3 py-1 rounded-full text-xs font-semibold">
-                        {project.category}
-                      </span>
-                    </div>
-                    <div className="space-y-2 mb-4">
-                      {project.features.slice(0, 3).map((feature, idx) => (
-                        <div key={idx} className="text-xs text-gray-400 flex items-center">
-                          <span className="w-1 h-1 bg-accent rounded-full mr-2"></span>
-                          {feature}
+                  </FloatingCard>
+                ) : (
+                  // Standard rendering for other projects
+                  <FloatingCard delay={index * 0.1}>
+                    <div className="text-center">
+                      <div className="mb-4 flex justify-center">
+                        <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-accent/20">
+                          <img 
+                            src={project.imageUrl} 
+                            alt={project.title}
+                            className="w-full h-full object-cover"
+                          />
                         </div>
-                      ))}
+                      </div>
+                      <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                      <p className="text-gray-300 text-sm mb-4">{project.description}</p>
+                      <div className="mb-4">
+                        <span className="inline-block bg-accent/20 text-accent px-3 py-1 rounded-full text-xs font-semibold">
+                          {project.category}
+                        </span>
+                      </div>
+                      <div className="space-y-2 mb-4">
+                        {project.features.slice(0, 3).map((feature, idx) => (
+                          <div key={idx} className="text-xs text-gray-400 flex items-center">
+                            <span className="w-1 h-1 bg-accent rounded-full mr-2"></span>
+                            {feature}
+                          </div>
+                        ))}
+                      </div>
+                      <a
+                        href={project.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block bg-accent/20 text-accent hover:bg-accent hover:text-white px-4 py-2 rounded-lg transition-colors duration-300 text-sm font-semibold"
+                      >
+                        Learn More
+                      </a>
                     </div>
-                    <a
-                      href={project.website}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-block bg-accent/20 text-accent hover:bg-accent hover:text-white px-4 py-2 rounded-lg transition-colors duration-300 text-sm font-semibold"
-                    >
-                      Learn More
-                    </a>
-                  </div>
-                </FloatingCard>
+                  </FloatingCard>
+                )}
               </motion.div>
             ))}
           </div>

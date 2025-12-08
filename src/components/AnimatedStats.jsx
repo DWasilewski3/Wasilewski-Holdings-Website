@@ -40,7 +40,7 @@ const AnimatedStats = () => {
     { label: "Projects Completed", value: 15, suffix: "+" },
     { label: "Investments Made", value: 8, suffix: "+" },
     { label: "Years Experience", value: 5, suffix: "+" },
-    { label: "Success Rate", value: 95, suffix: "%" }
+    { label: "Portfolio Value", value: 100, suffix: "K+" }
   ];
 
   return (

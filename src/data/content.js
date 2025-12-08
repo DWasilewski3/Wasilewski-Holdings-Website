@@ -122,5 +122,23 @@ export const projects = [
       'Accessible scientific communication',
       'Community-driven learning platform'
     ]
+  },
+  {
+    id: '2',
+    title: '3D Games',
+    description: 'Innovative browser-based 3D games built with Three.js that provide creative twists on classic games. Experience cognitive challenges through interactive 3D gaming experiences designed to entertain and mentally stimulate.',
+    imageUrl: './images/placeholder.svg',
+    category: 'Interactive Entertainment',
+    founded: '2024',
+    location: 'Michigan',
+    services: ['3D Graphics', 'Game Development', 'Interactive Entertainment', 'Cognitive Challenges'],
+    website: 'https://daydream-technologies.github.io/threejs-games/',
+    highlights: 'Creative cognitive challenges through innovative 3D gaming',
+    features: [
+      'Three.js powered 3D graphics',
+      'Innovative game mechanics',
+      'Cognitive challenge gameplay',
+      'Browser-based accessibility'
+    ]
   }
 ]; 

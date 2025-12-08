@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { investments } from '../data/content.js';
+import RotatingStars from '../components/RotatingStars.jsx';
 
 export default function Goals() {
   return (
@@ -85,6 +86,16 @@ export default function Goals() {
                 animate={{ pathLength: 1 }}
                 transition={{ duration: 2, delay: 1.4 }}
               />
+              <motion.path
+                d="M 400 200 Q 600 300 700 250"
+                stroke="#00cc66"
+                strokeWidth="3"
+                fill="none"
+                strokeDasharray="5,5"
+                initial={{ pathLength: 0 }}
+                animate={{ pathLength: 1 }}
+                transition={{ duration: 2, delay: 1.6 }}
+              />
             </svg>
 
             {/* Portfolio Companies */}
@@ -98,9 +109,7 @@ export default function Goals() {
               >
                 <div className="text-center">
                   <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4m0 6L8 7m0 0l4 4m-4-4L4 3" />
-                    </svg>
+                    <RotatingStars />
                   </div>
                   <h3 className="text-xl font-bold mb-2">DayDream Technologies</h3>
                   <p className="text-gray-300 text-sm mb-4">Custom Software Development</p>
@@ -122,9 +131,7 @@ export default function Goals() {
               >
                 <div className="text-center">
                   <div className="w-16 h-16 bg-gradient-to-br from-accent to-accent/60 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                    </svg>
+                    <RotatingStars />
                   </div>
                   <h3 className="text-xl font-bold mb-2">Cloud Cards</h3>
                   <p className="text-gray-300 text-sm mb-4">Digital Networking Solutions</p>
@@ -146,9 +153,7 @@ export default function Goals() {
               >
                 <div className="text-center">
                   <div className="w-16 h-16 bg-gradient-to-br from-accent to-accent/60 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4m0 2a2 2 0 110-4m0 4a2 2 0 110-4m0 4v6m-6 0v6m0-6a2 2 0 100-4m0 4a2 2 0 110-4m0 4v6" />
-                    </svg>
+                    <RotatingStars />
                   </div>
                   <h3 className="text-xl font-bold mb-2">Wasilewski Holdings</h3>
                   <p className="text-gray-300 text-sm mb-4">Technical Consulting & Strategic Advising</p>
@@ -228,8 +233,17 @@ export default function Goals() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 1 }}
-              className="relative flex justify-center items-center"
+              className="relative flex flex-col justify-center items-center"
             >
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 1.2 }}
+                className="mb-8"
+              >
+                <h4 className="text-2xl font-bold text-accent text-center">Constant Effort</h4>
+              </motion.div>
+
               <div aria-label="Orange and tan hamster running in a metal wheel" role="img" className="wheel-and-hamster">
                 <div className="wheel"></div>
                 <div className="hamster">
@@ -524,6 +538,15 @@ export default function Goals() {
                   }
                 }
               `}</style>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 1.3 }}
+                className="mt-8"
+              >
+                <h4 className="text-2xl font-bold text-accent text-center">Constant Progress</h4>
+              </motion.div>
             </motion.div>
           </div>
         </motion.div>

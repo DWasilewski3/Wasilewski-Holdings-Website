@@ -41,12 +41,12 @@ export default function Goals() {
 
           {/* Connection Flow Visualization */}
           <div className="relative">
-            {/* Central Hub */}
+            {/* Central Hub - Hidden */}
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 1, delay: 0.5 }}
-              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10"
+              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 hidden"
             >
               <div className="w-32 h-32 bg-gradient-to-br from-accent to-accent/60 rounded-full flex items-center justify-center shadow-2xl">
                 <span className="text-white font-bold text-lg text-center">Wasilewski<br/>Holdings</span>
@@ -98,7 +98,9 @@ export default function Goals() {
               >
                 <div className="text-center">
                   <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-white font-bold text-sm">DD</span>
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4m0 6L8 7m0 0l4 4m-4-4L4 3" />
+                    </svg>
                   </div>
                   <h3 className="text-xl font-bold mb-2">DayDream Technologies</h3>
                   <p className="text-gray-300 text-sm mb-4">Custom Software Development</p>
@@ -120,7 +122,9 @@ export default function Goals() {
               >
                 <div className="text-center">
                   <div className="w-16 h-16 bg-gradient-to-br from-accent to-accent/60 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-white font-bold text-sm">CC</span>
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                    </svg>
                   </div>
                   <h3 className="text-xl font-bold mb-2">Cloud Cards</h3>
                   <p className="text-gray-300 text-sm mb-4">Digital Networking Solutions</p>
@@ -142,7 +146,9 @@ export default function Goals() {
               >
                 <div className="text-center">
                   <div className="w-16 h-16 bg-gradient-to-br from-accent to-accent/60 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-white font-bold text-sm">WH</span>
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4m0 2a2 2 0 110-4m0 4a2 2 0 110-4m0 4v6m-6 0v6m0-6a2 2 0 100-4m0 4a2 2 0 110-4m0 4v6" />
+                    </svg>
                   </div>
                   <h3 className="text-xl font-bold mb-2">Wasilewski Holdings</h3>
                   <p className="text-gray-300 text-sm mb-4">Technical Consulting & Strategic Advising</p>

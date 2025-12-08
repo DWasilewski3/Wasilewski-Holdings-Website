@@ -1,0 +1,32 @@
+{
+  "name": "Wasilewski Holdings",
+  "short_name": "Wasilewski",
+  "description": "Investment and project portfolio of Wasilewski Holdings",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/vite.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/vite.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["business", "finance"],
+  "screenshots": [
+    {
+      "src": "/images/placeholder.svg",
+      "sizes": "540x720",
+      "type": "image/svg+xml"
+    }
+  ]
+}

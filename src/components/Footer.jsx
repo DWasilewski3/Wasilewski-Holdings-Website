@@ -134,8 +134,7 @@ const Footer = () => {
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
                 whileHover={{ 
-                  scale: 1.2,
-                  rotate: 360
+                  scale: 1.2
                 }}
                 transition={{ duration: 0.3 }}
               >

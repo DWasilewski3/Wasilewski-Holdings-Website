@@ -1,0 +1,19 @@
+# Robots.txt for Wasilewski Holdings
+# Allow all search engine bots to crawl the site
+
+User-agent: *
+Allow: /
+Disallow: /node_modules/
+Disallow: /.git/
+
+# Specific directives for common bots
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://wasilewski-holdings.com/sitemap.xml

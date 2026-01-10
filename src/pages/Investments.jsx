@@ -56,7 +56,7 @@ export default function Investments() {
             <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
               We are actively seeking innovative startups and emerging companies to advise and invest in. 
               If you have a compelling vision, a strong team, and are looking for strategic guidance and capital, 
-              we'd love to hear from you.
+              we&apos;d love to hear from you.
             </p>
           </div>
 

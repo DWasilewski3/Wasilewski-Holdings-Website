@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { investments } from '../data/content.js';
 import RotatingStars from '../components/RotatingStars.jsx';
 
 export default function Goals() {
@@ -211,7 +210,7 @@ export default function Goals() {
                   <h3 className="text-xl font-bold">Strategic Advising</h3>
                 </div>
                 <p className="text-gray-300">
-                  Cloud Cards benefits from Wasilewski Holdings' strategic guidance on market positioning, technology integration, and business development to maximize networking solutions impact.
+                  Cloud Cards benefits from Wasilewski Holdings&apos; strategic guidance on market positioning, technology integration, and business development to maximize networking solutions impact.
                 </p>
               </div>
 
@@ -223,7 +222,7 @@ export default function Goals() {
                   <h3 className="text-xl font-bold">Portfolio Integration</h3>
                 </div>
                 <p className="text-gray-300">
-                  Wasilewski Holdings orchestrates seamless integration between DayDream's custom software and Cloud Cards' networking solutions, creating unified business technology ecosystems.
+                  Wasilewski Holdings orchestrates seamless integration between DayDream&apos;s custom software and Cloud Cards&apos; networking solutions, creating unified business technology ecosystems.
                 </p>
               </div>
             </motion.div>
@@ -263,7 +262,7 @@ export default function Goals() {
                 <div className="spoke"></div>
               </div>
               
-              <style jsx>{`
+              <style>{`
                 /* From Uiverse.io by Nawsome */ 
                 .wheel-and-hamster {
                   --dur: 1s;

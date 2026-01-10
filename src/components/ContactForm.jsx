@@ -63,7 +63,7 @@ const ContactForm = () => {
       <div className="bg-gradient-to-br from-primary-light/20 to-primary/20 backdrop-blur-sm border border-accent/20 rounded-xl p-8">
         <h2 className="text-3xl font-bold mb-6 text-center">Get In Touch</h2>
         <p className="text-gray-300 text-center mb-8">
-          Ready to build the future together? Let's discuss your next project or investment opportunity.
+          Ready to build the future together? Let&apos;s discuss your next project or investment opportunity.
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -183,7 +183,7 @@ const ContactForm = () => {
             animate={{ opacity: 1, scale: 1 }}
             className="mt-6 p-4 bg-green-500/20 border border-green-500/30 rounded-lg text-green-400 text-center"
           >
-            ✅ Thank you! Your message has been sent successfully. We'll get back to you soon.
+            ✅ Thank you! Your message has been sent successfully. We&apos;ll get back to you soon.
           </motion.div>
         )}
 

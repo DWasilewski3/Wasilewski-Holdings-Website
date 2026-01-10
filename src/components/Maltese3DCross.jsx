@@ -23,7 +23,6 @@ const MalteseCrossGeometry = () => {
     const innerRadius = 0.3;
     const outerRadius = 1;
     const armCount = 4;
-    const armWidth = 0.5;
     
     // Function to create a star/cross shape
     const points = [];
@@ -56,7 +55,6 @@ const MalteseCrossGeometry = () => {
       const midY = (points[i].y + nextPoint.y) * 0.5;
       
       // Adjust intermediate points to create concave effect
-      const angle = Math.atan2(points[i].y, points[i].x);
       const adjustX = midX * 0.85;
       const adjustY = midY * 0.85;
       

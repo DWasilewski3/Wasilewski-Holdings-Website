@@ -14,7 +14,7 @@ export default function Contact() {
         >
           <h1 className="text-5xl font-bold mb-6">Contact Us</h1>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Ready to start a conversation? We're here to discuss opportunities, partnerships, and innovative projects.
+            Ready to start a conversation? We&apos;re here to discuss opportunities, partnerships, and innovative projects.
           </p>
         </motion.div>
 

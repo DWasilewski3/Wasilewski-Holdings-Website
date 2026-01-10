@@ -13,7 +13,7 @@ import AnimatedTimeline from '../components/AnimatedTimeline.jsx';
 import FloatingCard from '../components/FloatingCard.jsx';
 import Maltese3DCross from '../components/Maltese3DCross.jsx';
 
-const Hero3D = () => {
+const _Hero3D = () => {
   return (
     <Canvas camera={{ position: [0, 0, 5] }}>
       <ambientLight intensity={0.5} />
@@ -105,7 +105,7 @@ export default function Home() {
           >
             <h2 className="text-4xl font-bold mb-4">Our Portfolio Companies</h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Discover the innovative companies we're proud to invest in and support.
+              Discover the innovative companies we&apos;re proud to invest in and support.
             </p>
           </motion.div>
           

@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 
 const AnimatedMesh = () => {
@@ -138,7 +138,7 @@ const WaveEffect = () => {
   );
 };
 
-const OrbitingRings = () => {
+const _OrbitingRings = () => {
   const groupRef = useRef(null);
 
   useFrame(({ clock }) => {

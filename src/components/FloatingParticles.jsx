@@ -2,7 +2,7 @@ import { motion, useMotionValue, useSpring } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
 const FloatingParticles = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [, setMousePosition] = useState({ x: 0, y: 0 });
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   const springX = useSpring(mouseX, { stiffness: 100, damping: 30 });

@@ -4,29 +4,16 @@
   "description": "Investment and project portfolio of Wasilewski Holdings",
   "start_url": "/Wasilewski-Holdings-Website/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#000000",
+  "background_color": "#1a1a1a",
+  "theme_color": "#00cc66",
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/Wasilewski-Holdings-Website/vite.svg",
-      "sizes": "192x192",
+      "src": "/Wasilewski-Holdings-Website/favicon.svg",
+      "sizes": "any",
       "type": "image/svg+xml",
-      "purpose": "any"
-    },
-    {
-      "src": "/Wasilewski-Holdings-Website/vite.svg",
-      "sizes": "512x512",
-      "type": "image/svg+xml",
-      "purpose": "any"
+      "purpose": "any maskable"
     }
   ],
-  "categories": ["business", "finance"],
-  "screenshots": [
-    {
-      "src": "/Wasilewski-Holdings-Website/images/placeholder.svg",
-      "sizes": "540x720",
-      "type": "image/svg+xml"
-    }
-  ]
+  "categories": ["business", "finance"]
 }

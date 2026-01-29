@@ -40,6 +40,9 @@ const Card = ({ title, description, imageUrl, logoUrl, additionalInfo, externalL
           <img
             src={imageUrl}
             alt={title}
+            width={400}
+            height={192}
+            loading="lazy"
             className="object-contain rounded-t-xl w-full h-full p-4"
           />
           
@@ -54,6 +57,9 @@ const Card = ({ title, description, imageUrl, logoUrl, additionalInfo, externalL
               <img
                 src={logoUrl}
                 alt={`${title} logo`}
+                width={64}
+                height={64}
+                loading="lazy"
                 className="w-full h-full object-contain"
               />
             </motion.div>
@@ -81,7 +87,7 @@ const Card = ({ title, description, imageUrl, logoUrl, additionalInfo, externalL
         >
           {title}
         </motion.h3>
-                <p className="text-gray-300 mb-4">{description}</p>
+                <p className="text-gray-200 mb-4">{description}</p>
         
         {additionalInfo && (
           <div className="space-y-3 mb-4">

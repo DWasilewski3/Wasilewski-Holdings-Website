@@ -13,7 +13,7 @@ export default function Contact() {
           className="text-center mb-16"
         >
           <h1 className="text-5xl font-bold mb-6">Contact Us</h1>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-200 max-w-2xl mx-auto">
             Ready to start a conversation? We&apos;re here to discuss opportunities, partnerships, and innovative projects.
           </p>
         </motion.div>

@@ -14,7 +14,7 @@ export default function Investments() {
           className="text-center mb-16"
         >
           <h1 className="text-5xl font-bold mb-6">Our Investments</h1>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-200 max-w-2xl mx-auto">
             Explore our strategic investments in innovative companies across diverse industries.
           </p>
         </motion.div>
@@ -53,7 +53,7 @@ export default function Investments() {
         >
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-6">Actively Seeking New Opportunities</h2>
-            <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg text-gray-200 max-w-3xl mx-auto leading-relaxed">
               We are actively seeking innovative startups and emerging companies to advise and invest in. 
               If you have a compelling vision, a strong team, and are looking for strategic guidance and capital, 
               we&apos;d love to hear from you.

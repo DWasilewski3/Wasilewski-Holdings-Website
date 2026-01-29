@@ -53,7 +53,7 @@ export default function Home() {
             <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-gray-300 via-accent to-gray-300 bg-clip-text text-transparent">
               Wasilewski Holdings
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">
+            <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto mb-8">
               Driving innovation and sustainable growth through strategic investments in cutting-edge technology companies.
             </p>
           </motion.div>
@@ -66,13 +66,13 @@ export default function Home() {
           >
             <Link
               to="/investments"
-              className="bg-accent hover:bg-accent-light text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105"
+              className="bg-accent hover:bg-accent-light text-white px-8 py-4 min-h-[48px] rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 inline-flex items-center justify-center"
             >
               Explore Investments
             </Link>
             <Link
               to="/goals"
-              className="border border-accent text-accent hover:bg-accent hover:text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105"
+              className="border border-accent text-accent hover:bg-accent hover:text-white px-8 py-4 min-h-[48px] rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 inline-flex items-center justify-center"
             >
               View Goals
             </Link>
@@ -104,7 +104,7 @@ export default function Home() {
             className="text-center mb-12"
           >
             <h2 className="text-4xl font-bold mb-4">Our Portfolio Companies</h2>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-200 max-w-2xl mx-auto">
               Discover the innovative companies we&apos;re proud to invest in and support.
             </p>
           </motion.div>
@@ -131,12 +131,12 @@ export default function Home() {
                   />
                 </div>
                 <h3 className="text-xl font-semibold mb-2">{investment.title}</h3>
-                <p className="text-gray-300 text-sm mb-4">{investment.description}</p>
+                <p className="text-gray-200 text-sm mb-4">{investment.description}</p>
                 <a
                   href={investment.website}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block bg-accent/20 text-accent hover:bg-accent hover:text-white px-4 py-2 rounded-lg transition-colors duration-300"
+                  className="inline-block bg-accent/20 text-accent hover:bg-accent hover:text-white px-6 py-3 min-h-[48px] rounded-lg transition-colors duration-300 font-medium"
                 >
                   Visit Website
                 </a>
@@ -163,7 +163,7 @@ export default function Home() {
             className="text-center mb-12"
           >
             <h2 className="text-4xl font-bold mb-4">Our Journey</h2>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-200 max-w-2xl mx-auto">
               Track our progress and milestones as we build a world-class technology portfolio.
             </p>
           </motion.div>
@@ -181,7 +181,7 @@ export default function Home() {
             className="text-center mb-12"
           >
             <h2 className="text-4xl font-bold mb-4">Innovation Highlights</h2>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-200 max-w-2xl mx-auto">
               Explore our key initiatives and breakthrough technologies.
             </p>
           </motion.div>
@@ -213,7 +213,7 @@ export default function Home() {
                       </div>
                       <div className="text-center flex-shrink-0">
                         <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                        <p className="text-gray-300 text-sm mb-4">{project.description}</p>
+                        <p className="text-gray-200 text-sm mb-4">{project.description}</p>
                         <div className="mb-4">
                           <span className="inline-block bg-accent/20 text-accent px-3 py-1 rounded-full text-xs font-semibold">
                             {project.category}
@@ -227,14 +227,14 @@ export default function Home() {
                             </div>
                           ))}
                         </div>
-                        <a
-                          href={project.website}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-block bg-accent/20 text-accent hover:bg-accent hover:text-white px-4 py-2 rounded-lg transition-colors duration-300 text-sm font-semibold"
-                        >
-                          Play Now
-                        </a>
+<a
+                        href={project.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block bg-accent/20 text-accent hover:bg-accent hover:text-white px-6 py-3 min-h-[48px] rounded-lg transition-colors duration-300 text-sm font-semibold"
+                      >
+                        Play Now
+                      </a>
                       </div>
                     </div>
                   </FloatingCard>
@@ -247,12 +247,15 @@ export default function Home() {
                           <img 
                             src={project.imageUrl} 
                             alt={project.title}
+                            width={64}
+                            height={64}
+                            loading="lazy"
                             className="w-full h-full object-cover"
                           />
                         </div>
                       </div>
                       <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                      <p className="text-gray-300 text-sm mb-4">{project.description}</p>
+                      <p className="text-gray-200 text-sm mb-4">{project.description}</p>
                       <div className="mb-4">
                         <span className="inline-block bg-accent/20 text-accent px-3 py-1 rounded-full text-xs font-semibold">
                           {project.category}
@@ -270,7 +273,7 @@ export default function Home() {
                         href={project.website}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-block bg-accent/20 text-accent hover:bg-accent hover:text-white px-4 py-2 rounded-lg transition-colors duration-300 text-sm font-semibold"
+                        className="inline-block bg-accent/20 text-accent hover:bg-accent hover:text-white px-6 py-3 min-h-[48px] rounded-lg transition-colors duration-300 text-sm font-semibold"
                       >
                         Learn More
                       </a>

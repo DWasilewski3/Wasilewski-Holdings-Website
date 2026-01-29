@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -76,35 +77,39 @@ const Footer = () => {
           }}
         />
         
-        {/* Moving lines */}
-        <motion.div
-          className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent"
-          animate={{
-            x: ["-100%", "100%"]
-          }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-        />
-        <motion.div
-          className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent"
-          animate={{
-            x: ["100%", "-100%"]
-          }}
-          transition={{
-            duration: 5,
-            repeat: Infinity,
-            ease: "linear",
-            delay: 2
-          }}
-        />
+        {/* Moving lines - contained within overflow-hidden parent */}
+        <div className="absolute top-0 left-0 w-full h-px overflow-hidden">
+          <motion.div
+            className="w-full h-full bg-gradient-to-r from-transparent via-accent/30 to-transparent"
+            animate={{
+              x: ["-100%", "100%"]
+            }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+          />
+        </div>
+        <div className="absolute bottom-0 left-0 w-full h-px overflow-hidden">
+          <motion.div
+            className="w-full h-full bg-gradient-to-r from-transparent via-accent/20 to-transparent"
+            animate={{
+              x: ["100%", "-100%"]
+            }}
+            transition={{
+              duration: 5,
+              repeat: Infinity,
+              ease: "linear",
+              delay: 2
+            }}
+          />
+        </div>
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <motion.div 
-            className="text-sm text-gray-300"
+            className="text-sm text-gray-200"
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -112,11 +117,17 @@ const Footer = () => {
             © {currentYear} Wasilewski Holdings. All rights reserved.
           </motion.div>
           <motion.div 
-            className="mt-4 md:mt-0"
+            className="mt-4 md:mt-0 flex items-center gap-6"
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
+            <Link
+              to="/contact"
+              className="text-gray-200 hover:text-accent transition-colors text-sm font-medium py-2"
+            >
+              Contact Us
+            </Link>
             <motion.a
               href="https://www.linkedin.com/company/wasilewski-holdings/"
               target="_blank"
@@ -133,6 +144,7 @@ const Footer = () => {
                 fill="currentColor"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
                 whileHover={{ 
                   scale: 1.2
                 }}
@@ -186,7 +198,7 @@ const Footer = () => {
                 }}
               />
               <h4 className="text-accent font-semibold mb-2">Innovation</h4>
-              <p className="text-gray-300 text-sm">Pushing boundaries in technology and business</p>
+              <p className="text-gray-200 text-sm">Pushing boundaries in technology and business</p>
             </motion.div>
             <motion.div
               whileHover={{ scale: 1.05 }}
@@ -208,7 +220,7 @@ const Footer = () => {
                 }}
               />
               <h4 className="text-accent font-semibold mb-2">Investment</h4>
-              <p className="text-gray-300 text-sm">Strategic investments in emerging technologies</p>
+              <p className="text-gray-200 text-sm">Strategic investments in emerging technologies</p>
             </motion.div>
             <motion.div
               whileHover={{ scale: 1.05 }}
@@ -230,7 +242,7 @@ const Footer = () => {
                 }}
               />
               <h4 className="text-accent font-semibold mb-2">Growth</h4>
-              <p className="text-gray-300 text-sm">Building sustainable business solutions</p>
+              <p className="text-gray-200 text-sm">Building sustainable business solutions</p>
             </motion.div>
           </div>
           

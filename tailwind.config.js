@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+      },
       colors: {
         primary: {
           DEFAULT: '#1a1a1a', // Dark grey
@@ -18,9 +21,15 @@ module.exports = {
           dark: '#004d99',
         },
         accent: {
-          DEFAULT: '#00cc66', // Green
+          DEFAULT: '#00cc66', // Green - WCAG AA compliant on dark backgrounds
           light: '#33ff99',
           dark: '#00994d',
+        },
+        // Improved gray scale for better contrast
+        gray: {
+          200: '#e5e7eb', // Light gray for text - better contrast
+          300: '#d1d5db', // Secondary text
+          400: '#9ca3af', // Muted text
         },
       },
       animation: {

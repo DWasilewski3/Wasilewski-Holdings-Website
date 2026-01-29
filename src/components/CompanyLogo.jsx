@@ -17,6 +17,9 @@ const CompanyLogo = ({ logoUrl, title, className = "" }) => {
         <img
           src={logoUrl}
           alt={`${title} logo`}
+          width={128}
+          height={64}
+          loading="lazy"
           className="w-full h-full object-contain max-h-16"
         />
       </div>

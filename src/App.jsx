@@ -10,8 +10,11 @@ function App() {
   return (
     <Router>
       <div className="bg-primary text-white min-h-screen">
+        <a href="#main-content" className="skip-link">
+          Skip to main content
+        </a>
         <Navbar />
-        <main className="pt-16">
+        <main id="main-content" className="pt-16" tabIndex="-1">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/goals" element={<Goals />} />

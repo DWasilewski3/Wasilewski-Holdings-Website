@@ -24,16 +24,17 @@ const Navbar = () => {
   ];
 
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
-      className={`fixed w-full z-50 transition-all duration-500 ${
-        isScrolled 
-          ? 'bg-gradient-to-r from-primary/95 via-primary/90 to-primary/95 backdrop-blur-xl shadow-2xl border-b border-accent/20' 
-          : 'bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 backdrop-blur-sm'
-      }`}
-    >
+    <header role="banner">
+      <motion.nav
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.5 }}
+        className={`fixed w-full z-50 transition-all duration-500 ${
+          isScrolled 
+            ? 'bg-gradient-to-r from-primary/95 via-primary/90 to-primary/95 backdrop-blur-xl shadow-2xl border-b border-accent/20' 
+            : 'bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 backdrop-blur-sm'
+        }`}
+      >
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -70,7 +71,7 @@ const Navbar = () => {
             whileTap={{ scale: 0.95 }}
             className="relative"
           >
-            <Link to="/" className="text-2xl font-bold text-white relative z-10">
+            <Link to="/" className="text-2xl font-bold text-white relative z-10 py-3 inline-block min-h-[48px]">
               <span className="bg-gradient-to-r from-gray-300 to-accent bg-clip-text text-transparent">
                 Wasilewski Holdings
               </span>
@@ -143,6 +144,8 @@ const Navbar = () => {
             <motion.button
               whileTap={{ scale: 0.95 }}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+              aria-expanded={isMobileMenuOpen}
               className="text-white p-3 rounded-lg bg-accent/10 border border-accent/20 hover:bg-accent/20 transition-all duration-300"
             >
               <div className="w-6 h-6 flex flex-col justify-center items-center">
@@ -202,7 +205,8 @@ const Navbar = () => {
           )}
         </AnimatePresence>
       </div>
-    </motion.nav>
+      </motion.nav>
+    </header>
   );
 };
 
